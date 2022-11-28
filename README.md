@@ -1,2 +1,2 @@
 # linux-scripting
- tutoral notes
+# tutoral notes
