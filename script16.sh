@@ -12,7 +12,7 @@
 
 clear
 #ask users for ip address
-echo " hello, Please provide an Ip address "
+echo "hello, Please provide an Ip address "
 
 read numip
 
@@ -41,8 +41,9 @@ pc=$(( $pc + 2 ))
 #whiles a loop for how ever many users new-gives a subnet
 while [ "$a" -lt "$pc" ]
 do 
-        new=`echo " $numip" > newip |cat newip | cut -c -10` 	
-	echo " $new ${a}"
+        new=`echo "$numip" > newip |cat newip |tr "." " " |awk '{print $1,$2,$3}'` 	
+	edit=`echo "$new" > ipedit |cat ipedit|tr " " "."`
+	echo "$edit.${a}"
 	a=$(( $a + 1 ))
 done
 
